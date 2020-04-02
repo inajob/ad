@@ -67,9 +67,9 @@ $out = array();
 foreach($o->SearchResult->Items as $i){
     $item = array();
     $item["asin"] = $i->ASIN;
-    $item["link"] = $i->DetailPageURL;
+    $item["link"] = array($i->DetailPageURL);
     $item["title"] = $i->ItemInfo->Title->DisplayValue;
-    $item["image"] = $i->Images->Primary->Large->URL;
+    $item["mimage"] = array($i->Images->Primary->Large->URL);
     array_push($out, $item);
 }
 
