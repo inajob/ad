@@ -3,6 +3,9 @@
 /* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved. */
 /* Licensed under the Apache License, Version 2.0. */
 
+define('AMZ_ACCESS_KEY', getenv("AMZ_ACCESS_KEY"));
+define('AMZ_ACCESS_SECRET', getenv("AMZ_ACCESS_SECRET"));
+
 $q = $_GET['q'];
 $cv = $_GET['callback'];
 if(empty($q)){
@@ -12,8 +15,8 @@ if(empty($q)){
 // Put your Secret Key in place of **********
 $serviceName="ProductAdvertisingAPI";
 $region="us-west-2";
-$accessKey="AKIAI2HPS6M74YSPVV5A";
-$secretKey="w908NjY/FROB4bu9ABMHx7XjiXPPw1VjjDvENgBn";
+$accessKey=AMZ_ACCESS_KEY;
+$secretKey=AMZ_ACCESS_SECRET;
 $payload="{"
         ." \"Keywords\": \"" . q ."\","
         ." \"PartnerTag\": \"inajob-22\","
