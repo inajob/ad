@@ -6,7 +6,7 @@
 define('AMZ_ACCESS_KEY', getenv("AMZ_ACCESS_KEY"));
 define('AMZ_ACCESS_SECRET', getenv("AMZ_ACCESS_SECRET"));
 
-$q = $_GET['q'];
+$q = trim($_GET['q']);
 $cv = $_GET['callback'];
 if(empty($q)){
   $q='test';
