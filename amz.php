@@ -77,7 +77,7 @@ if(empty($cv)){
   echo json_encode($out);
 }else{
   header("Content-Type: text/javascript; charset=utf-8");
-  echo $cv . '(' . json_encode(bookSearch($q)) . ')';
+  echo $cv . '(' . json_encode($out) . ')';
 }
 
 class AwsV4 {
