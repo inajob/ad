@@ -18,7 +18,7 @@ $region="us-west-2";
 $accessKey=AMZ_ACCESS_KEY;
 $secretKey=AMZ_ACCESS_SECRET;
 $payload="{"
-        ." \"Keywords\": \"" . q ."\","
+        ." \"Keywords\": \"" . $q ."\","
         ." \"PartnerTag\": \"inajob-22\","
         ." \"PartnerType\": \"Associates\","
         ." \"Resources\": [\"Images.Primary.Large\",\"ItemInfo.Title\"],"
