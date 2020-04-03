@@ -21,7 +21,7 @@ $payload="{"
         ." \"Keywords\": \"" . $q ."\","
         ." \"PartnerTag\": \"inajob-22\","
         ." \"PartnerType\": \"Associates\","
-        ." \"Resources\": [\"Images.Primary.Large\",\"ItemInfo.Title\"],"
+        ." \"Resources\": [\"Images.Primary.Large\",\"Images.Primary.Medium\",\"Images.Primary.Small\",\"ItemInfo.Title\"],"
         ." \"Marketplace\": \"www.amazon.co.jp\""
         ."}";
 $host="webservices.amazon.co.jp";
@@ -69,7 +69,9 @@ foreach($o->SearchResult->Items as $i){
     $item["asin"] = $i->ASIN;
     $item["link"] = array($i->DetailPageURL);
     $item["title"] = $i->ItemInfo->Title->DisplayValue;
-    $item["mimage"] = array($i->Images->Primary->Large->URL);
+    $item["image"] = array($i->Images->Primary->Small->URL);
+    $item["mimage"] = array($i->Images->Primary->Medium->URL);
+    $item["limage"] = array($i->Images->Primary->Large->URL);
     array_push($out, $item);
 }
 
